@@ -1,23 +1,23 @@
 <html>
-<title>Cherry's Code - JS - ÅúÁ¿Êä³öÓĞ¹æÂÉÎÄ×Ö</title>
+<title>Cherry's Code - JS - å¯¼èˆªæ é«˜äº®ã€å±•å¼€å½“å‰é€‰æ‹©</title>
 <script src="style/jquery.js" type="text/javascript"></script>
 <link href="style/CherryCode.css" rel="stylesheet" type="text/css" />
 <body>
 
 	<div id="CherryCodeTitle">
 		<h2>Cherry's Code - JS</h2>
-		<h3>µ¼º½À¸¸ßÁÁ¡¢Õ¹¿ªµ±Ç°Ñ¡Ôñ</h3>
+		<h3>å¯¼èˆªæ é«˜äº®ã€å±•å¼€å½“å‰é€‰æ‹©</h3>
 	</div>
 
 	<div id="comment">
 		<ul>
-		<li>Target : nav¸ßÁÁ¡¢Õ¹¿ªµ±Ç°Ñ¡ÔñÏî£¬²¢ÊÕÆğÍ¬±²µ¼º½</li>
-		<li>Tag : jQueryÁ´Ê½²Ù×÷£¬sibling()£¬</li>
+		<li>Target : navé«˜äº®ã€å±•å¼€å½“å‰é€‰æ‹©é¡¹ï¼Œå¹¶æ”¶èµ·åŒè¾ˆå¯¼èˆª</li>
+		<li>Tag : jQueryé“¾å¼æ“ä½œï¼Œsibling()ï¼Œ</li>
 		<li>Note : 
 			<span><a href="http://www.w3school.com.cn/jquery/traversing_siblings.asp">$(this)</a></span>
-			µ±Ç°·â×°¶ÔÏó
+			å½“å‰å°è£…å¯¹è±¡
 			<span><a href="http://www.w3school.com.cn/jquery/traversing_siblings.asp">sibling()</a></span>
-			»ñÈ¡ËùÓĞÍ¬°ûÔªËØ
+			è·å–æ‰€æœ‰åŒèƒå…ƒç´ 
 		</li>
 		</ul>
 	</div>
@@ -25,21 +25,21 @@
 <!--code start-->
 	<nav id="menu">
 		<ul class="father">
-			<span>µÚÒ»Ìõµ¼º½A</span>
+			<span>ç¬¬ä¸€æ¡å¯¼èˆªA</span>
 			<li>A1.</li>
 			<li>A2.</li>
 			<li>A3.</li>
 			<li>A4.</li>
 		</ul>
 		<ul class="father">
-			<span>µÚ¶şÌõµ¼º½B</span>
+			<span>ç¬¬äºŒæ¡å¯¼èˆªB</span>
 			<li>B1.</li>
 			<li>B2.</li>
 			<li>B3.</li>
 			<li>B4.</li>
 		</ul>
 		<ul class="father">
-			<span>µÚÈıÌõµ¼º½C</span>
+			<span>ç¬¬ä¸‰æ¡å¯¼èˆªC</span>
 			<li>C1.</li>
 			<li>C2.</li>
 			<li>C3.</li>
@@ -66,7 +66,7 @@ display:none;
 
 <script type="text/javascript">
 
-	//1st. Á´Ê½²Ù×÷£¬È«Á¬ÔÚÒ»Æğ
+	//1st. é“¾å¼æ“ä½œï¼Œå…¨è¿åœ¨ä¸€èµ·
 	var isClick = true;
 	$(".father").click(function(){
 		$(this).addClass("highlight").children("li").show().end().siblings().removeClass("highlight").children("a").hide();
@@ -78,10 +78,10 @@ display:none;
 	
 	
 	
-	//2nd. ·Ö¿ª£¬Õ¹ÏÖÒ»¶¨²ã´Î
+	//2nd. åˆ†å¼€ï¼Œå±•ç°ä¸€å®šå±‚æ¬¡
 	/*$(".father").click(function(){
-		$(this).addClass("highlight").children("li").show().end();  //ÏÈÕ¹¿ªµ±Ç°
+		$(this).addClass("highlight").children("li").show().end();  //å…ˆå±•å¼€å½“å‰
 	
-		siblings().removeClass("highlight").children("li").hide();  //ºó¹Ø±ÕÍ¬±²
+		siblings().removeClass("highlight").children("li").hide();  //åå…³é—­åŒè¾ˆ
 	});*/
 </script>
