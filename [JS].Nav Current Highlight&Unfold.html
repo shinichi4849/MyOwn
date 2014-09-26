@@ -1,0 +1,87 @@
+<html>
+<title>Cherry's Code - JS - 批量输出有规律文字</title>
+<script src="style/jquery.js" type="text/javascript"></script>
+<link href="style/CherryCode.css" rel="stylesheet" type="text/css" />
+<body>
+
+	<div id="CherryCodeTitle">
+		<h2>Cherry's Code - JS</h2>
+		<h3>导航栏高亮、展开当前选择</h3>
+	</div>
+
+	<div id="comment">
+		<ul>
+		<li>Target : nav高亮、展开当前选择项，并收起同辈导航</li>
+		<li>Tag : jQuery链式操作，sibling()，</li>
+		<li>Note : 
+			<span><a href="http://www.w3school.com.cn/jquery/traversing_siblings.asp">$(this)</a></span>
+			当前封装对象
+			<span><a href="http://www.w3school.com.cn/jquery/traversing_siblings.asp">sibling()</a></span>
+			获取所有同胞元素
+		</li>
+		</ul>
+	</div>
+
+<!--code start-->
+	<nav id="menu">
+		<ul class="father">
+			<span>第一条导航A</span>
+			<li>A1.</li>
+			<li>A2.</li>
+			<li>A3.</li>
+			<li>A4.</li>
+		</ul>
+		<ul class="father">
+			<span>第二条导航B</span>
+			<li>B1.</li>
+			<li>B2.</li>
+			<li>B3.</li>
+			<li>B4.</li>
+		</ul>
+		<ul class="father">
+			<span>第三条导航C</span>
+			<li>C1.</li>
+			<li>C2.</li>
+			<li>C3.</li>
+			<li>C4.</li>
+		</ul>
+	</nav>
+
+</body>
+</html>
+
+<!--style start-->
+<style>
+
+.highlight{
+background:#e42857;
+color:#fff;
+}
+
+ul.father li {
+display:none;
+}
+
+</style>
+
+<script type="text/javascript">
+
+	//1st. 链式操作，全连在一起
+	var isClick = true;
+	$(".father").click(function(){
+		$(this).addClass("highlight").children("li").show().end().siblings().removeClass("highlight").children("a").hide();
+		if(isClick){
+			isClick = false;
+			$(this).removeClass("highlight").children("li").hide();
+		};
+	});
+	
+	
+	
+	//2nd. 分开，展现一定层次
+	/*$(".father").click(function(){
+		$(this).addClass("highlight").children("li").show().end();  //先展开当前
+	
+		siblings().removeClass("highlight").children("li").hide();  //后关闭同辈
+	});*/
+</script>

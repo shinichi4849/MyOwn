@@ -1,0 +1,33 @@
+#catalog{
+margin-top:10px;
+width:100%;
+}
+
+#catalog section{
+position:relative;
+width:100%;
+}
+
+#catalog header{
+position:relative;
+float:left;
+width:10%;
+background-color:#dcdddd;
+padding-left:20px;
+}
+
+#catalog ul.website-list{
+margin-left:20px;
+position:relative;
+display:block;
+float:left;
+clear:right;
+}
+
+#clear-float{
+clear:both;
+}
+
+#catalog ul.website-list li:hover{
+background:#fafafa;
+}
