@@ -28,6 +28,10 @@ clear:right;
 clear:both;
 }
 
+#catalog ul.website-list li{
+padding:5px;
+}
+
 #catalog ul.website-list li:hover{
-background:#fafafa;
+background:#e0e8f0;
 }

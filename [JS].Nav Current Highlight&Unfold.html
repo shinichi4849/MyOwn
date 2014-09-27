@@ -12,12 +12,14 @@
 	<div id="comment">
 		<ul>
 		<li>Target : nav高亮、展开当前选择项，并收起同辈导航</li>
-		<li>Tag : jQuery链式操作，sibling()，</li>
+		<li>Tag : jQuery链式操作，获取同胞、子类，控制图层隐藏&显示【第一个自己写的TAT值得鼓励！】</li>
 		<li>Note : 
 			<span><a href="http://www.w3school.com.cn/jquery/traversing_siblings.asp">$(this)</a></span>
 			当前封装对象
 			<span><a href="http://www.w3school.com.cn/jquery/traversing_siblings.asp">sibling()</a></span>
 			获取所有同胞元素
+			<span><a href="http://www.w3school.com.cn/jquery/effect_show.asp">show()-hide()</a></span>
+			可以通过修改speed控制速度
 		</li>
 		</ul>
 	</div>
@@ -67,21 +69,28 @@ display:none;
 <script type="text/javascript">
 
 	//1st. 链式操作，全连在一起
-	var isClick = true;
-	$(".father").click(function(){
-		$(this).addClass("highlight").children("li").show().end().siblings().removeClass("highlight").children("a").hide();
-		if(isClick){
-			isClick = false;
-			$(this).removeClass("highlight").children("li").hide();
-		};
-	});
-	
+	/*$(".father").click(function(){
+		$(this).addClass("highlight").children("li").show().end().siblings().removeClass("highlight").children("li").hide();  
+	});*/
 	
 	
 	//2nd. 分开，展现一定层次
 	/*$(".father").click(function(){
-		$(this).addClass("highlight").children("li").show().end();  //先展开当前
-	
+		$(this).addClass("highlight").children("li").show().end()  //先展开当前	
 		siblings().removeClass("highlight").children("li").hide();  //后关闭同辈
 	});*/
+
+	//EX. 扩展：点击后展开，再点击就关闭
+	var isClick = true;
+	$(function () {
+		$(".father").bind("click",function(){
+			if(isClick){
+				$(this).addClass("highlight").children("li").show().end().siblings().removeClass("highlight").children("a").hide();
+				isClick = false;
+			}else{
+				$(this).removeClass("highlight").children("li").hide();
+				isClick = true;
+			}
+		})
+	})
 </script>

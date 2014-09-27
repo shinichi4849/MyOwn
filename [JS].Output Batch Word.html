@@ -17,35 +17,29 @@
 	</div>
 
 <!--code start-->
-	<nav id="menu">
-		<ul class="father">
-			<span>第一条导航A</span>
-			<li>A1.</li>
-			<li>A2.</li>
-			<li>A3.</li>
-			<li>A4.</li>
-		</ul>
-		<ul class="father">
-			<span>第二条导航B</span>
-			<li>B1.</li>
-			<li>B2.</li>
-			<li>B3.</li>
-			<li>B4.</li>
-		</ul>
-		<ul class="father">
-			<span>第三条导航C</span>
-			<li>C1.</li>
-			<li>C2.</li>
-			<li>C3.</li>
-			<li>C4.</li>
-		</ul>
-	</nav>
+	<div class="imgsname"></div>
 
 </body>
 </html>
 
 
 <script type="text/javascript">
-
-
+function imgsplus(){
+      var imgs ;
+      var item ;
+      var str = "[";
+      for( imgs = 0 ; imgs < 61; imgs++ )
+      	{
+      		var imgs1 = imgs + 1 ;
+      		var obj = {"id":imgs,"src":"img/"+imgs1+".jpg","bigsrc":"img/"+imgs1+".jpg"};		
+      		var json_data = JSON.stringify(obj); 
+      		
+      		str += json_data+",<br />"; //这是直接加在HTML里的，所以要用HTML语言换行
+      	}
+      	str = str.substring(0,str.length-7);//最后一行跟其他不一样，最后一个逗号要去掉
+      	str += "]";
+      	
+      	$("div.imgsname").html(str);
+    }
+    imgsplus();
 </script>
